@@ -1,0 +1,10 @@
+%구간
+x = 0:0.01:2;
+%함수
+u = 3*log10(70*x+1);
+v = 4*cos(7*x);
+%그래프
+plot(x,u,x,v)
+legend('u','v')
+xlabel('mile')
+ylabel('mile/hour')
