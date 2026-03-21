@@ -1,0 +1,10 @@
+price = [300; 550; 400; 250; 500];
+Q = [5 4 6;
+     3 2 4;
+     6 5 3;
+     3 5 4;
+     2 4 3];
+C = price .* Q      %(a)
+month= sum(C)       %(b)
+a4 = sum(C, 2)      %(c)
+total = sum(C, 'all')  %(d)
