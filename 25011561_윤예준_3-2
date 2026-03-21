@@ -1,0 +1,11 @@
+v=50, a2=50, g=9.81;
+t_hit=2 * v * sind(a2) / g     %(a)
+y_max= v * sind(a2) / g
+T = linspace(0, t_hit,100); %(b)
+
+x2 = v*cosd(a2) * T;
+y2 = v*sind(a2) * T - 0.5*g*T.^2;
+
+plot(x2, y2)
+xlabel('x')
+ylabel('y')
