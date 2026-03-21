@@ -1,0 +1,26 @@
+bridge(1).loc = 'Smith St.';         %(a)
+bridge(1).load = 80;
+bridge(1).built = 1928;
+bridge(1).limit = 2025;
+
+bridge(2).loc = 'Hope Ave.';
+bridge(2).load = 90;
+bridge(2).built = 1950;
+bridge(2).limit = 2027;
+
+bridge(3).loc = 'Clark St.';
+bridge(3).load = 85;
+bridge(3).built = 1933;
+bridge(3).limit = 2024;
+
+bridge(4).loc = 'North Rd.';
+bridge(4).load = 100;
+bridge(4).built = 1960;
+bridge(4).limit = 2023;
+
+bridge(3).limit = 2026;               %(b)
+
+bridge(5).loc='Shore Rd.';            %(c)
+bridge(5).load = 85; 
+bridge(5).built = 1997; 
+bridge(5).limit = 2022;
