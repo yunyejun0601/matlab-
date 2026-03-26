@@ -1,0 +1,6 @@
+function t = yyj_25011561_func_2(v0, h, g)
+    D = v0^2 - 2*g*h;   % 판별식
+    t1 = (v0 + sqrt(D)) / g;
+    t2 = (v0 - sqrt(D)) / g;
+    t = [t1, t2]; % 두 개 해 반환
+end
