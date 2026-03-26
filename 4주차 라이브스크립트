@@ -1,0 +1,84 @@
+1)
+x_1 = linspace(0,4,100);
+y_1 = yyj_25011561_func_1(x_1);
+% 그래프 그리기
+x_1 = linspace(0,4,1000);
+y_1 = yyj_25011561_func_1(x_1);
+
+plot(x_1,y_1)
+grid on
+xlabel('x')
+ylabel('f(x)')
+
+a_1 = fzero(@yyj_25011561_func_1, 1)   %근 구하기
+
+a_2 = fminbnd(@yyj_25011561_func_1, 0, 4); %최소값 위치
+
+a_3 =yyj_25011561_func_1(a_2)              %최소값
+f0 = yyj_25011561_func_1(0);
+f4 = yyj_25011561_func_1(4);
+
+disp([f0 f4 a_3])
+2)
+v0 = 50;
+h_2 = 100;
+g_2 = 9.81;
+
+t_2 = yyj_25011561_func_2(v0, h_2, g_2)
+두개의 답이 나오는 이유= 높이 100에 올라갈때 한번 내려갈때 한번 도달하기때문에
+3)
+%(a)
+% A=sqrt((pi^2*r^6+9*V^2)/r^2);              A에 관한 식
+
+%(b) 함수생성
+
+%(c)
+global V
+V = 10;
+r_3 = linspace(0.1,5,1000);
+A = yyj_25011561_func_3(r_3);
+plot(r_3,A)
+grid on
+xlabel('r')
+ylabel('A')
+
+r1 = fminbnd(@yyj_25011561_func_3, 0.1, 5)  %면적을 최소화하는 r값
+h_3= (3*V)/(pi*r1^2);                         %상응하는 높이 h
+A_min=yyj_25011561_func_3(r1);
+
+target = 1.1 * A_min;      
+r_range = r_3(A <= target);                   %1.1배이하 r 선택    
+r_min = min(r_range)                        %최소값
+r_max = max(r_range)                        %최대값
+4)
+f_4 = @(x) 10*exp(-2*x);           % 익명 함수
+
+x_4 = linspace(0, 2, 1000);
+y_4 = f_4(x_4);
+
+plot(x_4, y_4)
+grid on
+xlabel('x')
+ylabel('f(x)')
+5)
+f_5= @(x) 30.*x.^2-300.*x+4;
+x_5= linspace(0,10,1000);
+y_5=f_5(x_5);
+
+plot(x_5,y_5)
+grid on
+xlabel('x')
+ylabel('y')
+
+minx=fminbnd(f_5,4,6)
+6)
+h_6=@(z) 6.*exp(z);
+g_6=@(y) 3.*cos(y);
+f_6=@(x) x.^2;
+H_6=@(x) h_6(g_6(f_6(x)));
+
+x=linspace(0,4,100);
+y=H_6(x);
+plot(x,y)
+grid on
+
