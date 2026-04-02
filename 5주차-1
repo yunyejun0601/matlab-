@@ -1,0 +1,27 @@
+1)
+x=[-2 -1 0 1 2];
+squareVec(x)
+function y=squareVec(x)
+    y=x.^2;
+end
+2)
+function y=meanVec(x)
+    y=mean(x);
+end
+
+meanVec(x)b 
+3)
+function y = mixedTransform(x)
+    y = zeros(size(x));
+    
+    for i = 1:length(x)
+        if x(i) < 0
+            y(i) = -x(i);
+        elseif x(i) == 0
+            y(i) = x(i);  
+        else
+            y(i) = 2*x(i) + 1;     
+        end
+    end
+end
+mixedTransform(x)
