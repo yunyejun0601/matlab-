@@ -1,0 +1,12 @@
+applicants=[165 72 1;
+            172 85 0;
+            168 91 1;
+            181 77 1;
+            174 69 0;
+            169 88 1
+           ];
+h=applicants(:,1)>=170          %(1)
+score=applicants(:,2)>=80       %(2)
+pn=applicants(:,3)==1           %(3)
+idx = find(h & score & pn)      %(4)
+final = applicants(idx,:)       %(5)
