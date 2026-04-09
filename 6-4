@@ -1,0 +1,14 @@
+clc
+clear
+x=[4,-9,0,16,-1,25];
+y= zeros(1,length(x))
+for i=1:length(x)
+    if x(i)>0
+        y(i)=x(i)^2;
+    elseif x(i)<0
+        y(i)=-x(i);
+    else
+        y(i)=x(i);
+    end
+end    
+y
