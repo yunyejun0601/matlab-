@@ -1,0 +1,17 @@
+price=[19, 18, 22, 21, 25, 19, 17, 21, 27, 29];
+total=1000;
+buy=0;
+sell=0;
+for i=1:length(price)
+    if price(i)<20
+        total=total+100;
+        buy=buy+price(i)*100;
+    elseif price(i)>25
+        total=total-100
+        sell=sell+price(i)*100;
+    end
+end
+buy     %(a)
+sell    %(b)
+total   %(c)
+increase=sell-buy      %(d)
