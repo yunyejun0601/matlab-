@@ -1,0 +1,13 @@
+m=input('정수를 입력하세요');
+switch m
+    case 1
+        disp('January')
+    case 2
+        disp('February')
+    case 3
+        disp('March')
+    case 4
+        disp('April')
+    otherwise
+        disp('invalid month')
+end
