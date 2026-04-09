@@ -1,0 +1,19 @@
+a = input('a: ');
+b = input('b: ');
+cmd = input('문자를 입력하세요: ','s');
+switch cmd
+    case 'add'
+        fprintf("%d\n", a+b);
+    case 'sub'
+        fprintf("%d\n", a-b);
+    case 'mul'
+        fprintf("%d\n", a*b);
+    case 'div'
+        if b == 0
+            fprintf('invalid command\n');
+        else
+            fprintf("%f\n", a/b);
+        end
+    otherwise
+        fprintf('invalid command\n');
+end
