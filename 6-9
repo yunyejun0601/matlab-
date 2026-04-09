@@ -1,0 +1,19 @@
+clc
+clear
+type = input('연결 형태: ', 's');
+n = input('저항 개수: ');
+
+R = zeros(1,n);
+
+for i = 1:n
+    R(i) = input(' ');
+end
+
+if strcmp(type, '직렬연결')
+    Req = sum(R);
+
+elseif strcmp(type, '병렬연결')
+    Req = 1 / sum(1 ./ R);
+end
+
+fprintf('등가 저항 = %f', Req);
