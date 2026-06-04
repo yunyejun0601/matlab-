@@ -1,0 +1,50 @@
+#include <stdio.h>
+int main() {
+    int X[100];
+    int count = 0;
+    int N;
+    int M1, M2;
+    scanf_s("%d %d", &M1, &M2);
+    while (1) {
+        scanf_s("%d", &N);
+        if (N <= 0)   
+            break;
+        int num = N;
+        int Y[100];
+        int i = 0;
+        while (N > 0) {
+            Y[i++] = N % 10;
+            N /= 10;
+        }
+        int original = 0;
+        for (int j = i-1; j >=0; j--) {     
+            if (j == M1 || j == M2) continue;  
+            original = original * 10 + Y[j];
+        }
+        int n = original;
+        int reversed = 0;
+        while (n > 0) {
+            reversed = reversed * 10 + n % 10;
+            n /= 10;
+        }
+        if (original == reversed) {
+            X[count++] = num;
+        }
+    }
+
+    for (int i = 0; i < count - 1; i++) {
+        for (int j = i + 1; j < count; j++) {
+            if (X[i] < X[j]) {
+                int temp = X[i];
+                X[i] = X[j];
+                X[j] = temp;
+            }
+        }
+    }
+    if (count == 0) printf("none");
+    for (int i = 0; i < count; i++) {
+        printf("%d ", X[i]);
+    }
+
+    return 0;
+}
