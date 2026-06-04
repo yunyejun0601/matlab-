@@ -5,8 +5,8 @@ int main() {
     char Y[1001];
     char Z[101];
 
-    int xCnt = 0;
-    int yCnt = 0;
+    int xcount = 0;
+    int ycount = 0;
 
     char ch;
 
@@ -16,11 +16,11 @@ int main() {
         if (ch == '!')
             break;
 
-        X[xCnt++] = ch;
+        X[xcount++] = ch;
 
         int found = 0;
 
-        for (int i = 0; i < yCnt; i++) {
+        for (int i = 0; i < ycount; i++) {
             if (Y[i] == ch) {
                 found = 1;
                 break;
@@ -28,10 +28,10 @@ int main() {
         }
 
         if (!found)
-            Y[yCnt++] = ch;
+            Y[ycount++] = ch;
     }
 
-    Y[yCnt] = '\0';
+    Y[ycount] = '\0';
     printf("%s\n", Y);
 
     int M;
@@ -46,7 +46,7 @@ int main() {
 
     int pos = -1;
 
-    for (int i = 0; i <= yCnt - M; i++) {
+    for (int i = 0; i <= ycount - M; i++) {
 
         int same = 1;
 
