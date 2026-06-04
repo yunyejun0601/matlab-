@@ -1,0 +1,39 @@
+#include <stdio.h>
+int main() {
+    int X[100];
+    int count = 0;
+    int N;
+
+    while (1) {
+        scanf("%d", &N);
+
+        if (N <= 0) break;
+        int original = N;
+        int reversed = 0;
+
+        while (N > 0) {
+            reversed = reversed * 10 + N % 10;
+            N /= 10;
+        }
+
+        if (original==reversed) {
+            X[count++] = N;
+        }
+    }
+
+    for (int i = 0; i < count - 1; i++) {
+        for (int j = i + 1; j < count; j++) {
+            if (X[i] < X[j]) {
+                int temp = X[i];
+                X[i] = X[j];
+                X[j] = temp;
+            }
+        }
+    }
+
+    for (int i = 0; i < count; i++) {
+        printf("%d ", X[i]);
+    }
+
+    return 0;
+}
