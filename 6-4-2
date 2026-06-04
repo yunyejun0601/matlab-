@@ -1,0 +1,42 @@
+#include <stdio.h>
+int main() {
+    char X[1000];
+    char Y[100];
+    int countY = 0;
+    char ch;
+    int countX = 0;
+
+    while (1) {
+        scanf("%c", &ch);
+
+        if (ch == '!')
+            break;
+
+        X[countX++] = ch;
+
+        int found = 0;
+        for (int i = 0; i < countY; i++) {
+            if (Y[i] == ch) {
+                found = 1;
+                break;
+            }
+        }
+
+        if (!found) {
+            Y[countY++] = ch;
+        }
+    }
+
+    for (int i = countY - 1; i >= 0; i--) {
+        int cnt = 0;
+
+        for (int j = 0; j < countX; j++) {
+            if (X[j] == Y[i])
+                cnt++;
+        }
+
+        printf("%c %d\n", Y[i], cnt);
+    }
+
+    return 0;
+}
